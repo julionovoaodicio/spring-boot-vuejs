@@ -4,11 +4,18 @@ import router from './router'
 import BootstrapVue from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
+
+import "@/assets/css/themify-icons.css";
+
 import store from './store'
+
+import GlobalComponents from "./plugins/globalComponents";
+import GlobalDirectives from "./plugins/globalDirectives";
 
 Vue.config.productionTip = false;
 
-// Bootstrap
+Vue.use(GlobalDirectives);
+Vue.use(GlobalComponents);
 Vue.use(BootstrapVue);
 
 new Vue({

@@ -3,12 +3,13 @@
     <h1>Create User</h1>
 
     <h3>Just some database interaction...</h3>
-
-    <input type="text" v-model="user.firstName" placeholder="first name">
-    <input type="text" v-model="user.lastName" placeholder="last name">
-
-    <button @click="createNewUser()">Create User</button>
-
+    <card class="card container border-0" style="max-width: 300px">
+      <div class="form-group mx-auto" >
+        <input type="text" class="form-control mt-1" v-model="user.firstName" placeholder="first name">
+        <input type="text" class="form-control mt-1" v-model="user.lastName" placeholder="last name">
+        <button @click="createNewUser()" class="btn btn-blocked p-2 bg-primary text-white form-control mt-3">Create User</button>
+      </div>
+   </card>
     <div v-if="showResponse"><h6>User created with Id: {{ response }}</h6></div>
 
     <button v-if="showResponse" @click="retrieveUser()">Retrieve user {{user.id}} data from database</button>

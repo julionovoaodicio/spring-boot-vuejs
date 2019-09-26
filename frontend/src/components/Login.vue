@@ -6,13 +6,18 @@
   <div class="unprotected" v-else>
     <h1><b-badge variant="info">Please login to get access!</b-badge></h1>
     <h5>You're not logged in - so you don't see much here. Try to log in:</h5>
-
-    <form @submit.prevent="callLogin()">
-      <input type="text" placeholder="username" v-model="user">
-      <input type="password" placeholder="password" v-model="password">
-      <b-btn variant="success" type="submit">Login</b-btn>
-      <p v-if="error" class="error">Bad login information</p>
-    </form>
+    <card class="card" >
+      <div class="container d-flex justify-content-center">
+      <form @submit.prevent="callLogin()">
+        <div class="form-group" >
+          <input type="text" placeholder="username" class="form-control mt-1" v-model="user">
+          <input type="password" placeholder="password" v-model="password" class="form-control mt-1">
+            <b-btn variant="success" class="btn btn-block mt-3" type="submit">Login</b-btn>
+            <p v-if="error" class="error">Bad login information</p>
+          </div>
+      </form>
+      </div>
+      </card>
   </div>
 
 </template>
@@ -46,3 +51,5 @@ export default {
   }
 }
 </script>
+<style>
+</style>
